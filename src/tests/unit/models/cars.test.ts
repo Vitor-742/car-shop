@@ -4,7 +4,7 @@ import CarModel from '../../../models/Cars';
 const { expect } = chai;
 import { CarMockWithId, CarMock } from '../mocks/carMock'
 
-describe('endpoint /cars', () => {
+describe('endpoint /cars model', () => {
     const carModel = new CarModel()
 
   before(async () => {
