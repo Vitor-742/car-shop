@@ -20,4 +20,6 @@ route.post(
   (req, res) => carsController.create(req, res),
 );
 
+route.get('/', (req, res) => carsController.readAll(req, res));
+
 export default route;

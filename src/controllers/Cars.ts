@@ -9,4 +9,9 @@ export default class CarsController {
     const results = await this._service.create(req.body);
     return res.status(201).json(results);
   }
+
+  public async readAll(req: Request, res: Response) {
+    const results = await this._service.readAll();
+    return res.status(200).json(results);
+  }
 }
