@@ -1,26 +1,3 @@
-// template para criação dos testes de cobertura da camada de controller
-
-
-// import * as sinon from 'sinon';
-// import chai from 'chai';
-// const { expect } = chai;
-
-// describe('Sua descrição', () => {
-
-//   before(async () => {
-//     sinon
-//       .stub()
-//       .resolves();
-//   });
-
-//   after(()=>{
-//     sinon.restore();
-//   })
-
-//   it('', async () => {});
-
-// });
-
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { Request, Response } from 'express';
@@ -54,8 +31,6 @@ describe('Frame Controller', () => {
     it('Success', async () => {
       req.body = CarMock;
       await carsController.create(req, res);
-      // o cast de `res.status` é feito pois `res` foi criado como do tipo `Resquest` 
-      // e agora, que queremos validar com o que foi chamado, precisar ser tratado como um `sinon.SinonStub`
       expect((res.status as sinon.SinonStub).calledWith(201)).to.be.true;
       expect((res.json as sinon.SinonStub).calledWith(CarMock)).to.be.true;
     });
